@@ -11,7 +11,8 @@
     "seed": "node database/seed.js",
     "test": "jest",
     "start": "nodemon server/index.js",
-    "build": "webpack -d -w"
+    "build": "webpack -d -w",
+    "seed-database": "mongoimport --type csv -d test -c searchitem --headerline --drop products.csv"
   },
   "jest": {
     "testEnvironment": "node"
