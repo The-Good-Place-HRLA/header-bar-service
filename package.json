@@ -12,7 +12,8 @@
     "test": "jest",
     "start": "nodemon server/index.js",
     "build": "webpack -d -w",
-    "seed-database": "mongoimport --type csv -d test -c searchitem --headerline --drop products.csv"
+    "seed-mongo": "mongoimport --type csv -d test -c searchitem --headerline --drop products.csv",
+    "seed-postgres": "psql -U edgarbarrientos -h localhost; "
   },
   "jest": {
     "testEnvironment": "node"
@@ -28,6 +29,8 @@
     "jquery": "^3.4.1",
     "mongoose": "^5.8.10",
     "morgan": "^1.9.1",
+    "pg": "^7.18.1",
+    "pg-format": "^1.0.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-modal": "^3.11.1"
