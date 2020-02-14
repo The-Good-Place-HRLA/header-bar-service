@@ -43,51 +43,63 @@ class SearchBar extends React.Component {
   // on change of the search field
   // filter the autoFill list for anything that contains the substring
   onChangeHandler(e) {
-    const searchTerm = e.target.value;
-    if (searchTerm === '') {
+    const searchTerm = e.target.value.toString();
+    // if (searchTerm === '') {
+    //   this.setState({
+    //     matchingFillsIndex: [],
+    //     matchingFillsFormatted: [],
+    //     searchVisibility: false
+    //   });
+    //   return;
+    // }
+    console.log(searchTerm)
+    axios.post('/api', { "term": searchTerm } )
+    .then(data => {
+      var results = [];
+      data.data.map(item => {results.push(`<span class="AJautofillhighlight">${item.product_name}</span>`)})
+      if(searchTerm === "") {
+        results = []
+      }
       this.setState({
-        matchingFillsIndex: [],
-        matchingFillsFormatted: [],
-        searchVisibility: false
-      });
-      return;
-    }
+        matchingFillsFormatted:results
+      })
+    })
 
-    let regexString = '';
+    // let regexString = '';
 
     // this loop builds a regEx expression that ignores whitespace between all characters
     // \s* is a regex term that ignores whitespace, use a \\ to escape the second slash because strings
-    for (var i = 0; i < searchTerm.length; i++) {
-      regexString += '\\s*' + searchTerm[i];
-    }
-    // add a regex value for spaces after as well
-    regexString += '\\s*';
+    // for (var i = 0; i < searchTerm.length; i++) {
+    //   regexString += '\\s*' + searchTerm[i];
+    // }
+    // // add a regex value for spaces after as well
+    // regexString += '\\s*';
 
     // create a regexQuery object to feed into the string
-    let regexQuery = new RegExp(regexString);
-    let matchingFillsIndex = [];
-    let matchingFillsFormatted = [];
+    // let regexQuery = new RegExp(regexString);
+    // let matchingFillsIndex = [];
+    // let matchingFillsFormatted = [];
 
-    this.state.autoFills.forEach((autoFillItem, index) => {
-      let autoFillTerm = autoFillItem.name;
-      // search within the all the autofill options
-      let indexOfSearchStart = autoFillTerm.search(regexQuery);
+    // this.state.autoFills.forEach((autoFillItem, index) => {
+    //   let autoFillTerm = autoFillItem.name;
+    //   // search within the all the autofill options
+    //   let indexOfSearchStart = autoFillTerm.search(regexQuery);
 
-      // the case where we do find the searchterm
-      if (indexOfSearchStart !== -1) {
-        matchingFillsIndex.push(index);
-        let indexOfSearchEnd = this.findEndIndexIgnoreSpaces(searchTerm, autoFillTerm, indexOfSearchStart);
+    //   // the case where we do find the searchterm
+    //   if (indexOfSearchStart !== -1) {
+    //     matchingFillsIndex.push(index);
+    //     let indexOfSearchEnd = this.findEndIndexIgnoreSpaces(searchTerm, autoFillTerm, indexOfSearchStart);
 
-        // now we need to add spans before and after the search term
-        let returnValue = autoFillTerm;
-        returnValue = this.stringSpliceAdd(returnValue, indexOfSearchEnd + 1, '</span>');
-        returnValue = this.stringSpliceAdd(returnValue, indexOfSearchStart, '<span class="AJautofillhighlight">');
+    //     // now we need to add spans before and after the search term
+    //     let returnValue = autoFillTerm;
+    //     returnValue = this.stringSpliceAdd(returnValue, indexOfSearchEnd + 1, '</span>');
+    //     returnValue = this.stringSpliceAdd(returnValue, indexOfSearchStart, '<span class="AJautofillhighlight">');
 
-        matchingFillsFormatted.push(returnValue);
+    //     matchingFillsFormatted.push(returnValue);
 
-      }
-    }
-    );
+    //   }
+    // }
+    // );
 
     this.setState({
       matchingFillsIndex,

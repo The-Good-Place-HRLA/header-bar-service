@@ -3,6 +3,11 @@ const controller = require('./controller.js');
 
 router
   .route('/')
-  .get(controller.getAll);
+  .get(controller.getAll)
+  .post(controller.getProductByMatch)
+  
+router
+.route('/:id')
+.get(controller.getProductById)
 
 module.exports = router;
