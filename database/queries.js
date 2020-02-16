@@ -17,9 +17,9 @@ const queries = {
         })
     },
     getProductbyMatch: (term, callback) => {
-        console.log(`%${term.term}%`);
+    
         var search = `%${term.term}%`;
-        db.query(`SELECT * FROM searchitems WHERE product_name LIKE $1 LIMIT 10`, [search],(err, rows) => {
+        db.query(`EXPLAIN ANALYZE SELECT * FROM searchitems WHERE product_name LIKE $1`, [search],(err, rows) => {
             if(err) {
                 callback(err)
             } else {

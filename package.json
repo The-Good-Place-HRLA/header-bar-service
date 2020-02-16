@@ -12,26 +12,32 @@
     "test": "jest",
     "start": "nodemon server/index.js",
     "build": "webpack -d -w",
-    "seed-mongo": "mongoimport --type csv -d rei -c searchitem --headerline --drop products.csv",
-    "seed-postgres": "psql -U edgarbarrientos -h localhost"
+    "seed-mongo": "mongoimport --type csv -d rei -c searchitems --headerline --drop products.csv",
+    "open-postgres": "psql -U edgarbarrientos -h localhost",
+    "seed-postgres": "COPY searchitems(id,productname) FROM 'products.csv' DELIMITER ',' CSV HEADER;",
+    "test-artillery": "artillery run hello.yml"
   },
   "jest": {
     "testEnvironment": "node"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "artillery": "^1.6.0-29",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "eslint": "^6.8.0",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "jest": "^25.1.0",
     "jquery": "^3.4.1",
+    "mongodb": "^3.5.3",
     "mongoose": "^5.8.10",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "pg": "^7.18.1",
     "pg-format": "^1.0.4",
+    "psql": "0.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-modal": "^3.11.1"

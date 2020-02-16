@@ -6,7 +6,7 @@ var searchModel = require('./index.js');
 var sampleSearch = require('../sampledata/data.json');
 var mongoose = require('mongoose');
 const faker = require('faker');
-const Drain = require('drain');
+
 const fs = require('fs');
 
 

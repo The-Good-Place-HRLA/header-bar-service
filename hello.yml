@@ -1,0 +1,31 @@
+config:
+    target: 'http://localhost:3001'
+    phases:
+      - duration: 20
+        arrivalRate: 20
+      - duration: 60
+        arrivalRate: 50
+        rampTo: 100
+      - duration: 20
+        arrivalRate: 1000
+      - duration: 60
+        arrivalRate: 50
+        rampTo: 2000
+
+    payload: 
+        path: "./keywords.csv"
+        field:
+            - "searchterm"
+scenarios:
+  - flow: 
+    # - get:
+    #     url: "/api"
+    - post:
+        url: "/api"
+        json:
+            term: "{{searchterm}}"
+          
+               
+            
+  
+  

@@ -56,7 +56,14 @@ class SearchBar extends React.Component {
     axios.post('/api', { "term": searchTerm } )
     .then(data => {
       var results = [];
-      data.data.map(item => {results.push(`<span class="AJautofillhighlight">${item.product_name}</span>`)})
+      var products = [];
+      data.data.forEach(product => {
+        products.push(product.productname)
+
+      })
+      var sortedData = products.sort();
+      console.log(sortedData)
+      sortedData.map(item => {results.push(`<span class="AJautofillhighlight">${item}</span>`)})
       if(searchTerm === "") {
         results = []
       }
@@ -101,11 +108,11 @@ class SearchBar extends React.Component {
     // }
     // );
 
-    this.setState({
-      matchingFillsIndex,
-      matchingFillsFormatted,
-      searchVisibility: true
-    });
+    // this.setState({
+    //   // matchingFillsIndex,
+    //   matchingFillsFormatted,
+    //   searchVisibility: true
+    // });
   }
 
   /*
