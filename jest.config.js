@@ -1,3 +1,7 @@
 module.exports = {
-    testTimeout: 30000
+    testTimeout: 800000,
+    // "reporters": [
+    //   "default",
+    //   "jest-html-reporters"
+    // ],
   }
