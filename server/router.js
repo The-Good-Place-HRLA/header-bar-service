@@ -4,8 +4,8 @@ const controller = require('./controller.js');
 router
   .route('/')
   .get(controller.getAll)
-  .post(controller.getProductByMatchMG)
-  // .post(controller.getProductByMatchPG)
+  // .post(controller.getProductByMatchMG)
+  .post(controller.getProductByMatchPG)
   
 router
 .route('/:id')

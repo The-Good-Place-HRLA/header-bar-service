@@ -8,9 +8,8 @@ config:
         rampTo: 100
       - duration: 20
         arrivalRate: 1000
-      - duration: 60
-        arrivalRate: 50
-        rampTo: 2000
+      - duration: 400
+        arrivalRate: 1000
 
     payload: 
         path: "./keywords.csv"
