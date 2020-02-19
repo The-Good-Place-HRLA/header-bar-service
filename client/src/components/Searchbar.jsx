@@ -17,15 +17,15 @@ class SearchBar extends React.Component {
 
 // on mount, get all the potential autofills
   componentDidMount() {
-    axios
-      .get('http://localhost:3001/api')
-      // .get('/api')
-      .then(autoFills => {
-        this.setState({
-          autoFills: autoFills.data
-        });
-      })
-      .catch(err => console.error(err));
+    // axios
+    //   .get('http://localhost:3001/api')
+    //   // .get('/api')
+    //   .then(autoFills => {
+    //     this.setState({
+    //       autoFills: autoFills.data
+    //     });
+    //   })
+    //   .catch(err => console.error(err));
   }
 
   onBlurHandler() {
@@ -52,8 +52,13 @@ class SearchBar extends React.Component {
     //   });
     //   return;
     // }
+    var check = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+    if(!searchTerm.match(check)){
+      console.log('hi')
+      return;
+    }
     console.log(searchTerm)
-    axios.post('/api', { "term": searchTerm } )
+    axios.post('http://localhost:3001/api', { "term": searchTerm } )
     .then(data => {
       var results = [];
       var products = [];

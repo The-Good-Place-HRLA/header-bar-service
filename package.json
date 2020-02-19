@@ -16,7 +16,7 @@
     "open-postgres": "psql -U edgarbarrientos -h localhost",
     "seed-postgres": "COPY searchitems(id,productname) FROM 'products.csv' DELIMITER ',' CSV HEADER;",
     "test-artillery": "artillery run hello.yml",
-    "test-k6": "k6 run -u 2 -d 30s --rps 100 spec/k6.js"
+    "test-k6": "k6 run -u 2 -d 60s --rps 100 spec/k6.js"
   },
   "jest": {
     "testEnvironment": "node"
