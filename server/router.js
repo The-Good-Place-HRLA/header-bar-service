@@ -3,7 +3,7 @@ const controller = require('./controller.js');
 
 router
   .route('/')
-  .get(controller.getAll)
+  // .get(controller.getAll)
   // .post(controller.getProductByMatchMG)
   .post(controller.getProductByMatchPG)
   

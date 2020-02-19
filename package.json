@@ -10,12 +10,13 @@
   "scripts": {
     "seed": "node database/seed.js",
     "test": "jest",
-    "start": "nodemon server/index.js",
+    "start": "nodemon server/cluster.js",
     "build": "webpack -d -w",
     "seed-mongo": "mongoimport --type csv -d rei -c searchitems --headerline --drop products.csv",
     "open-postgres": "psql -U edgarbarrientos -h localhost",
     "seed-postgres": "COPY searchitems(id,productname) FROM 'products.csv' DELIMITER ',' CSV HEADER;",
-    "test-artillery": "artillery run hello.yml"
+    "test-artillery": "artillery run hello.yml",
+    "test-k6": "k6 run -u 2 -d 30s --rps 100 spec/k6.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -41,7 +42,8 @@
     "psql": "0.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-modal": "^3.11.1"
+    "react-modal": "^3.11.1",
+    "redis": "^3.0.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.3",
