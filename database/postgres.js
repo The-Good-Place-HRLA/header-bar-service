@@ -1,7 +1,7 @@
 var pg = require('pg');
 var format = require('pg-format');
 var PGDATABASE = 'rei';
-var PGHOST = '18.144.66.204';
+var PGHOST = 'ec2-18-144-66-204.us-west-1.compute.amazonaws.com';
 
 var config = {
     // user: PGUSER, // name of the user account
