@@ -10,7 +10,7 @@
   "scripts": {
     "seed": "node database/seed.js",
     "test": "jest",
-    "start": "nodemon server/cluster.js",
+    "start": "nodemon server/index.js",
     "build": "webpack -d -w",
     "seed-mongo": "mongoimport --type csv -d rei -c searchitems --headerline --drop products.csv",
     "open-postgres": "psql -U edgarbarrientos -h localhost",
