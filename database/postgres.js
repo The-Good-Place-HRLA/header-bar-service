@@ -1,9 +1,11 @@
 var pg = require('pg');
 var format = require('pg-format');
 var PGDATABASE = 'rei';
+var PGHOST = 'http://54.193.59.93/5432'
 
 var config = {
     // user: PGUSER, // name of the user account
+    host: PGHOST,
     database: PGDATABASE, // name of the database
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000 // how long a client is allowed to remain idle before being closed

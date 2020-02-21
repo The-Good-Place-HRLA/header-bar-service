@@ -24,7 +24,7 @@ function writeTenMillion(writer, encoding, callback) {
     do {
       i -= 1;
       id += 1;
-      const username = faker.commerce.productName()+`${id}`;
+      const username = faker.commerce.productName()+` ${id}`;
       const data = `${id},${username}\n`;
       if (i === 0) {
         writer.write(data, encoding, callback);

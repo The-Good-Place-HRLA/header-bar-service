@@ -105,8 +105,8 @@ describe("limit 10 from last 10%", ()=>{
     //   }
     // }
      for( var iteration = 0; iteration < 50; iteration++ ) {
-      let mongoQueryResults = [];
-      let postgresQueryResults = [];
+      // let mongoQueryResults = [];
+      // let postgresQueryResults = [];
 
       let regexString = '';
       var word = searchterm[Math.floor(Math.random() * 11)];
@@ -124,31 +124,31 @@ describe("limit 10 from last 10%", ()=>{
       var item =  {productname: {$regex: re, $options: 'i'}}
       // , id: { $gt: 9000000 }
 //for query results uncomment
-      var mongoResults = await Mongo.find(item).limit(10);
+      // var mongoResults = await Mongo.find(item).limit(10);
       // speedResults.push(mongoResults[0].executionStats.executionTimeMillis)
-      var x = 0;
-      while (x < 10) {
-        if(mongoResults[x] === undefined){
-          x++;
-          continue;
-        }
-        mongoQueryResults.push(mongoResults[x]['productname']);
-        x++;
-      }
+      // var x = 0;
+      // while (x < 10) {
+      //   if(mongoResults[x] === undefined){
+      //     x++;
+      //     continue;
+      //   }
+      //   mongoQueryResults.push(mongoResults[x]['productname']);
+      //   x++;
+      // }
 
-      var postgresResults = await Postgres.query(`SELECT * FROM searchitems WHERE productname ILIKE $1 AND id > 9000000 LIMIT 10`, [search]).then(data=> {return data.rows})
+      // var postgresResults = await Postgres.query(`SELECT * FROM searchitems WHERE productname ILIKE $1 LIMIT 10`, [search]).then(data=> {return data.rows})
       // speedResults.push(Number(postgresResults[postgresResults.length-1]['QUERY PLAN'].slice(16,postgresResults[5]['QUERY PLAN'].length-3)));
       // queryResults.push(postgresResults)
-      var y = 0;
-      while (y < 10) {
-        if(postgresResults[y] === undefined){
-          y++;
-          continue;
-        }
-        postgresQueryResults.push(postgresResults[y]['productname']);
-        // console.log(customerX)
-        y++;
-      }
+      // var y = 0;
+      // while (y < 10) {
+      //   if(postgresResults[y] === undefined){
+      //     y++;
+      //     continue;
+      //   }
+      //   postgresQueryResults.push(postgresResults[y]['productname']);
+      //   // console.log(customerX)
+      //   y++;
+      // }
 
 
       var mongoResults = await Mongo.find(item).limit(10).explain("executionStats");
@@ -159,8 +159,8 @@ describe("limit 10 from last 10%", ()=>{
       postgresSpeedResults.push(Number(postgresResults[postgresResults.length-1]['QUERY PLAN'].slice(16,postgresResults[postgresResults.length-1]['QUERY PLAN'].length-3)));
       // speedResults.push(postgresResults[postgresResults.length-1]['QUERY PLAN'].slice(16,postgresResults[postgresResults.length-1]['QUERY PLAN'].length-3))
 //for query results uncomment
-      console.log(`Query results of ${word} for Mongo: `,mongoQueryResults);
-      console.log(`Query results of ${word} for postgres: `,postgresQueryResults)
+      // console.log(`Query results of ${word} for Mongo: `,mongoQueryResults);
+      // console.log(`Query results of ${word} for postgres: `,postgresQueryResults)
     }
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     console.log(`Average speed of Mongo query in ms: `,(mongoSpeedResults.reduce(reducer, 0)/iteration).toFixed(2));
