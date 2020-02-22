@@ -6,7 +6,7 @@ var PGUSER = 'postgres';
 var PGPASSWORD = 'manuel23';
 
 var config = {
-    // user: PGUSER, // name of the user account
+    user: PGUSER, // name of the user account
     password: PGPASSWORD,
     host: PGHOST,
     database: PGDATABASE, // name of the database
