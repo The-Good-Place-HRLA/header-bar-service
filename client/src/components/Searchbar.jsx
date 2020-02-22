@@ -56,7 +56,7 @@ class SearchBar extends React.Component {
     if(!searchTerm.match(check)){
       return;
     }
-    axios.post('/api', { "term": searchTerm } )
+    axios.post('http://http://54.193.48.34:3001/api', { "term": searchTerm } )
     .then(data => {
       var results = [];
       var products = [];
