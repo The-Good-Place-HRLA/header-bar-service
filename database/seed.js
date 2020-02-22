@@ -11,7 +11,7 @@ const fs = require('fs');
 
 
 var writeProducts = fs.createWriteStream('products.csv');
-writeProducts.write('id,productname\n', 'utf8');
+writeProducts.write('productname\n', 'utf8');
 
 var start = Date.now();
 function writeTenMillion(writer, encoding, callback) {
@@ -25,7 +25,7 @@ function writeTenMillion(writer, encoding, callback) {
       i -= 1;
       id += 1;
       const username = faker.commerce.productName()+` ${id}`;
-      const data = `${id},${username}\n`;
+      const data = `${username}\n`;
       if (i === 0) {
         writer.write(data, encoding, callback);
 

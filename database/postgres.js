@@ -1,10 +1,13 @@
 var pg = require('pg');
 var format = require('pg-format');
 var PGDATABASE = 'rei';
-var PGHOST = 'ec2-18-144-66-204.us-west-1.compute.amazonaws.com';
+var PGHOST = '172.31.6.14';
+var PGUSER = 'postgres';
+// var PGPASSWORD = 'edgar';
 
 var config = {
     // user: PGUSER, // name of the user account
+    // password: PGPASSWORD,
     host: PGHOST,
     database: PGDATABASE, // name of the database
     max: 10, // max number of clients in the pool
