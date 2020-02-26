@@ -81,6 +81,6 @@ const clientPath = path.resolve(__dirname, "./client/dist");
 const clientConfig = Config(clientEntry, "main", "web", clientPath);
 
 const serverEntry = path.resolve(__dirname, "server/index.js");
-const serverPath = path.resolve(__dirname);
+const serverPath = path.resolve(__dirname, 'server');
 const serverConfig = Config(serverEntry, "server", "node", serverPath);
 module.exports = [serverConfig, clientConfig];

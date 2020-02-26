@@ -17,7 +17,8 @@
     "seed-postgres": "COPY searchitems(id,productname) FROM 'products.csv' DELIMITER ',' CSV HEADER;",
     "test-artillery": "artillery run hello.yml",
     "test-k6": "k6 run -u 2 -d 120s --rps 1000 spec/k6.js",
-    "server-side": "webpack -d -w & babel-node bundle.server.js"
+    "server-side": "webpack -d -w & babel-node server/bundle.server.js",
+    "start-ssr": "babel-node server/bundle.server.js"
   },
   "jest": {
     "testEnvironment": "node"
