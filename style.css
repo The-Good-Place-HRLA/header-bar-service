@@ -1,0 +1,704 @@
+/*-------------------- START: CSS RESET -------------------- */
+/* #region CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, svg, button{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* #endregion */
+/*-------------------- END: CSS RESET -------------------- */
+/* Element that we attach to */
+#header {
+  /* background-color: white; */
+  background-color: #000;
+}
+
+/* --------------------- START: Top Nav --------------------- */
+/* #region TopNav */
+/* Div that wraps the ul */
+#AJnavwrapper {
+  background-color: #2a2a2a;
+  text-align: left;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#AJnavwrapperbackground {
+  background-color: #2a2a2a;
+}
+
+/* UL for the nav */
+#AJtopnav {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  height: 40px;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  padding: 0 30px 0;
+}
+
+li.AJitem {
+  color: #ccc;
+  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 14px 8px 8px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+li.item:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+#AJselected {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+#AJselected:before{
+  border-top-width: 0!important;
+  border-right-width: 7px;
+  border-bottom-width: 7px;
+  border-left-width: 7px;
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  border-color: transparent;
+  border-style: solid;
+  border-top-width: 0!important;
+  border-bottom-color: inherit;
+  transform: translate(-13px,-1px);
+}
+
+#AJselected:after {
+  border-top-width: 0!important;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  border-left-width: 5px;
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  border-color: transparent;
+  border-style: solid;
+  border-top-width: 0!important;
+  border-bottom-color: inherit;
+  transform: translate(-4px,-1px);
+}
+/* #endregion Main */
+/* --------------------- END: Top Nav --------------------- */
+
+
+/* #region mainheader*/
+/* Div that wraps the main header section */
+#AJmainheader {
+  box-sizing: border-box;
+  text-align: left;
+
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: 19px 30px 25px;
+
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+#AJreilogo {
+  margin-right: 30px;
+  max-width: 100%;
+  max-height: 100px;
+}
+
+#AJheaderbody {
+  max-width: 1200px;
+}
+
+#AJheaderactions {
+  font-size: 18px;
+  height: auto;
+  min-width: 952px;
+}
+
+.AJsearchwrapper {
+  display: flex;
+  position: relative;
+}
+
+.AJsearchwrapper form {
+  display: flex;
+  width: 50%;
+  height: 100%;
+}
+
+#AJsearchbox {
+  padding: 12px 20px;
+  width: 75%;
+  font-size: 18px;
+  background-color: #555;
+  color: #fff;
+  border: 0px none;
+  height: 100%;
+}
+
+/* ::placeholder {
+  color: white;
+} */
+
+/* input:focus::placeholder {
+  color: transparent;
+} */
+
+#AJsearchbutton {
+  box-sizing: border-box;
+  background-color: #555;
+  padding: 11px;
+  width: 8.75%;
+  height: 100%;
+  fill: white;
+}
+
+#AJsearchbutton :hover {
+  fill: #a1c900;
+}
+
+.AJautofillmodal {
+  width: 41.5%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px black solid;
+  z-index: 5;
+}
+
+.AJautofilllist {
+  box-sizing: border-box;
+}
+
+.AJautofillitems {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #292929;
+  font-family: 'Roboto', sans-serif;
+
+  padding: 0 24px;
+}
+
+.AJautofillitems:hover {
+  background-color: #e9e9e9;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.AJautofillhighlight {
+  font-weight: 400;
+  color: inherit;
+}
+
+#AJmainheader hr {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 900px;
+  /* width: 100%; */
+  border: 0;
+  margin: 16px 0 0;
+  border-top: 1px solid #e5e5e5;
+  box-sizing: content-box;
+  height: 0;
+}
+#AJsectionnavwrap {
+  padding-top: 10px;
+  height: 45%;
+
+}
+#AJsectionnav {
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
+  align-items: center;
+}
+
+.AJmenulevel1item {
+  /* position: relative; */
+  box-sizing: border-box;
+  color: white;
+  fill: white;
+  /* padding-top: 15px; */
+  font-size: 18px;
+  
+}
+
+.AJmenulevel1namewrapper {
+  position: relative;
+}
+
+.AJsubmenumtn:before {
+  content: '';
+  border-width: 0px 30px 30px 30px;
+  
+  position: absolute;
+  left: calc(15% - 25px);
+  bottom: -30px;
+  border-color: transparent transparent #efeee2;
+  border-style: solid;
+}
+
+.AJsubmenumtn:after {
+  content: '';
+  border-width: 0px 20px 20px 20px;
+  
+  position: absolute;
+  left: calc(15% + 15px);
+  bottom: -30px;
+  border-color: transparent transparent #efeee2;
+  border-style: solid;
+}
+
+#AJrei-outlet-wrap {
+  /* display: inline-block; */
+  display: flex;
+}
+
+#AJrei-outlet {
+  height: 12px;
+  max-width: 110px;
+  vertical-align: top;
+}
+#AJrei-outlet-caret {
+  height: 20px;
+  max-width: 30px;
+  margin-top: -4px;
+}
+
+
+#AJsectionactions {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 15px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: -40px;
+  right: 20px;
+  color: white;
+  fill: white;
+  height: 50%;
+  width: 23%;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#AJsectionactions li{
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.AJactionsvgwrap {
+  margin-left: 5px;
+  height: 25px;
+  width: 25px;
+}
+
+.AJmousepointer {
+  cursor: pointer;
+}
+
+.AJhovergreen:hover {
+  fill: #a1c900 !important;
+  color: #a1c900 !important;
+}
+
+.AJsigninmodal{
+  position: absolute;
+  top: 115px;
+  left: -105px;
+  background-color: white;
+  width: 300px;
+  height: 421px;
+  box-sizing: border-box;
+  box-shadow: -3px 3px 3px 0 rgba(0,0,0,.2), 3px 3px 3px 0 rgba(0,0,0,.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 30px 10px;
+  z-index: 900;
+}
+
+#AJsigninwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.AJmtnssignin {
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  background-color: #fff;
+  left: 110px;
+  width: 79px;
+}
+
+
+#AJclosebutton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  fill: #2e2e2e;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#AJsigninform {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: black;
+  font-family: 'Roboto Condensed',sans-serif;
+  width: 100%;
+}
+
+#AJemailinput{
+  margin-bottom: 26px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#AJemailinput div {
+  box-sizing: border-box;
+  height: 16px;
+  margin-bottom: 6px;
+
+}
+#AJemailinputbox {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 8px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #c5c5c5;
+  border-radius: 3px;
+}
+
+
+#AJpasswordinput{
+  margin-bottom: 26px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#AJpasswordinput div {
+  box-sizing: border-box;
+  height: 16px;
+  margin-top: 2px;
+  margin-bottom: 6px;
+
+}
+
+#AJpasswordinputbox {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 8px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #c5c5c5;
+  border-radius: 3px;
+}
+
+#AJforgotpassword {
+  color: #347cb1;
+  font-size: 16px;
+  font-weight: 700;
+  padding-top: 3px;
+  font-family: 'Roboto';
+}
+
+#AJdisclaimer {
+  font-size: 12px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  margin-top: -6px;
+  font-family: 'Roboto', 'sans-serif';
+}
+
+#AJsigninbtn {
+  color: white;
+  background-color: #426c90;
+  border-color: transparent;
+}
+
+#AJcreatebtn {
+  border-color: #c5c5c5;
+  background-color: #f0f0f0;
+}
+
+.AJsigninmodalbtn {
+  box-sizing: border-box;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-family: 'Roboto', 'sans-serif';
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.AJmtn {
+  position: absolute;
+  top: -20px;
+  left: 110px;
+  height: 20px;
+  width: 79px;
+  z-index: 900;
+  
+  background-color: #efeee2;
+}
+
+/* #region submenu-level-2 */
+/* wraps the entire modal */
+.AJmenulevel2modal {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  left: 0;
+  /* width: 1200px; */
+  max-width: 1200px;
+  margin: 23px auto 0;
+  padding: 30px;
+  color: #222;
+  background-color: #efeee2;
+  z-index: 400;
+}
+
+/* title that appears within top of modal */
+.AJmenulevel2title {
+  box-sizing: border-box;
+  color: #222;
+  font: 28.43px Georgia, serif;
+  width: 100%;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+/* UL for entire submenu navigation */
+.AJmenulevel2 {
+  max-width: 75%;
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  border-right: 1px solid #ddd;
+}
+
+/* Li wrapper for level 2 item */
+.AJmenulevel2item {
+  box-sizing: border-box;
+  max-width: 25%;
+  flex-basis: 25%;
+  padding: 0 10px 16px 0;
+}
+/* Div title for the level 3 section */
+.AJmenulevel3title {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  font-size: 16px;
+
+  margin-bottom: 8px;
+}
+/* UL wrapper for level 3 items */
+.AJmenulevel3 {
+
+}
+/* LI for level 3 items */
+.AJmenulevel3item{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  padding-top: 6px;
+}
+
+/* #endregion */
+.AJsidebar {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+.AJmerchComp {
+  padding-bottom: 16px;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.AJmerchpic {
+  margin-bottom: 16px;
+}
+.AJextras {
+  box-sizing: border-box;
+  margin-left: 19px;
+  width: auto;
+}
+
+.AJextras li {
+  font-size: 16px;
+  Font-family: Georgia, serif;
+  font-weight: 600;
+  line-height: 1.333;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+/* Wraps the explore item */
+.AJexploreItem {
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 15px;
+  padding: 9px;
+}
+
+/* Wraps the two text sections of an explore item */
+.AJexploretextsection {
+  display: flex;
+  flex-direction: column;
+}
+
+.AJexplorename {
+  font-size: 16px;
+  font-family: Georgia, serif;
+  font-weight: 500;
+  text-transform: none;
+  font-stretch: normal;
+  line-height: 1.333;
+  color: #004e00;
+}
+.AJexploresubtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #004e00;
+}
+
+/* #region Explore Icons Section */
+.AJtagicon::before {
+  background-position: 0 0;
+}
+
+.AJspeechbubbleicon::before {
+  background-position: 0 -40px;
+}
+
+.AJcompassicon::before {
+  background-position: 0 -80px;
+}
+
+.AJnotepadicon::before {
+  background-position: 0 -120px;
+}
+
+.AJpickaxeicon::before {
+  background-position: 0 -160px;
+}
+
+.AJgearicon::before {
+  background-position: 0 -200px;
+}
+
+.AJleaficon::before {
+  background-position: 0 -240px;
+}
+
+.AJbandannaicon::before {
+  background-position: 0 -280px;
+}
+
+.AJbandannaicon::before {
+  background-position: 0 -320px;
+}
+
+.AJcalendaricon::before {
+  background-position: 0 -360px;
+}
+
+.AJcaricon::before {
+  background-position: 0 -400px;
+}
+
+.AJbooticon::before {
+  background-position: 0 -440px;
+}
+
+.AJexploreIcon::before {
+  width: 40px;
+  height: 40px;
+  content: '';
+  display: flex;
+  background-image: url(https://hrla34-syntax-terror-anthony.s3-us-west-1.amazonaws.com/mega-menu-sprite.png);
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.AJexploreIcon {
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+/* #endregion */
+

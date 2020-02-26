@@ -1,5 +1,6 @@
 var pg = require('pg');
-var format = require('pg-format');
+// import pg from 'pg';
+// var format = require('pg-format');
 var PGDATABASE = 'rei';
 var PGHOST = '172.31.6.14';
 var PGUSER = 'postgres';
