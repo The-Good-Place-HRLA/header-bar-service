@@ -71,7 +71,7 @@ app.listen(port, () => console.log(`\u001b[1;34mServer listening on port ${port}
 const React = require('react');
 
 import {renderToString} from 'react-dom/server';
-import App from '../client/src/components/app.jsx';
+import App from '../client/src/components/App.jsx';
 
 
 app.get("/", (req,res) => {
