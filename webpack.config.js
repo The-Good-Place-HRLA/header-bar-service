@@ -69,7 +69,10 @@ const Config = (entry, name, target, path) => {
     },
     resolve: {
       extensions: ['.js', '.jsx']
-    }
+    },
+    plugins: [
+      new webpack.IgnorePlugin(/^pg-native$/)
+    ]
   }
 }
 
